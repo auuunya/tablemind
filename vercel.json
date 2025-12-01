@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "functions": {
+        "api/*.ts": {
+            "maxDuration": 10
+        }
+    },
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/api/index.ts"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/client/dist/$1"
+        }
+    ]
+}

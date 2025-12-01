@@ -1,0 +1,51 @@
+{
+    "name": "tablemind-miniprogram",
+    "version": "1.0.0",
+    "description": "TableMind 微信小程序版本 - 智能Excel数据对比分析",
+    "main": "index.js",
+    "scripts": {
+        "build:weapp": "taro build --type weapp",
+        "build:alipay": "taro build --type alipay",
+        "build:h5": "taro build --type h5",
+        "dev:weapp": "npm run build:weapp -- --watch",
+        "dev:alipay": "npm run build:alipay -- --watch",
+        "dev:h5": "npm run build:h5 -- --watch",
+        "lint": "eslint --ext .js,.jsx,.ts,.tsx src"
+    },
+    "dependencies": {
+        "@tarojs/components": "3.6.23",
+        "@tarojs/plugin-framework-react": "3.6.23",
+        "@tarojs/plugin-platform-weapp": "3.6.23",
+        "@tarojs/react": "3.6.23",
+        "@tarojs/runtime": "3.6.23",
+        "@tarojs/taro": "3.6.23",
+        "exceljs": "^4.4.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@tarojs/cli": "3.6.23",
+        "@tarojs/webpack5-runner": "3.6.23",
+        "@types/react": "^18.0.0",
+        "@types/webpack-env": "^1.13.6",
+        "@typescript-eslint/eslint-plugin": "^5.20.0",
+        "@typescript-eslint/parser": "^5.20.0",
+        "babel-preset-taro": "3.6.23",
+        "eslint": "^8.12.0",
+        "eslint-config-taro": "3.6.23",
+        "eslint-plugin-import": "^2.12.0",
+        "eslint-plugin-react": "^7.8.2",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "postcss": "^8.4.18",
+        "typescript": "^5.1.0",
+        "webpack": "5.78.0"
+    },
+    "browserslist": [
+        "last 3 versions",
+        "Android >= 4.1",
+        "ios >= 8"
+    ],
+    "author": "",
+    "license": "MIT"
+}

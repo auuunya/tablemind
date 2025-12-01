@@ -1,0 +1,137 @@
+// 全局样式
+page {
+    background-color: #f5f7fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+        'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+// 通用容器
+.container {
+    padding: 32rpx;
+    min-height: 100vh;
+}
+
+// 卡片样式
+.card {
+    background: #fff;
+    border-radius: 16rpx;
+    padding: 32rpx;
+    margin-bottom: 24rpx;
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 24rpx;
+}
+
+// 按钮样式
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12rpx;
+    padding: 24rpx 48rpx;
+    font-size: 28rpx;
+    font-weight: 500;
+}
+
+.btn-outline {
+    background: #fff;
+    color: #3b82f6;
+    border: 2rpx solid #3b82f6;
+    border-radius: 12rpx;
+    padding: 24rpx 48rpx;
+    font-size: 28rpx;
+}
+
+// 状态标签
+.badge {
+    display: inline-block;
+    padding: 8rpx 16rpx;
+    border-radius: 8rpx;
+    font-size: 24rpx;
+
+    &.badge-success {
+        background: #d1fae5;
+        color: #065f46;
+    }
+
+    &.badge-warning {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    &.badge-error {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+}
+
+// 文件列表
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 24rpx;
+    background: #f9fafb;
+    border-radius: 12rpx;
+    margin-bottom: 16rpx;
+
+    .file-icon {
+        width: 64rpx;
+        height: 64rpx;
+        margin-right: 24rpx;
+    }
+
+    .file-info {
+        flex: 1;
+
+        .file-name {
+            font-size: 28rpx;
+            color: #1f2937;
+            margin-bottom: 8rpx;
+        }
+
+        .file-meta {
+            font-size: 24rpx;
+            color: #6b7280;
+        }
+    }
+}
+
+// 加载状态
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120rpx 0;
+
+    .loading-text {
+        margin-top: 24rpx;
+        font-size: 28rpx;
+        color: #6b7280;
+    }
+}
+
+// 空状态
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120rpx 0;
+
+    .empty-icon {
+        width: 200rpx;
+        height: 200rpx;
+        margin-bottom: 32rpx;
+    }
+
+    .empty-text {
+        font-size: 28rpx;
+        color: #9ca3af;
+    }
+}

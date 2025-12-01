@@ -1,0 +1,541 @@
+.compare-page {
+    padding: 24rpx;
+    min-height: 100vh;
+    padding-bottom: 140rpx; // 增加底部 padding 以防遮挡
+    background: #f3f4f6;
+}
+
+.step-section {
+    .section-header {
+        margin-bottom: 24rpx;
+        padding: 0 8rpx;
+
+        .section-title {
+            display: block;
+            font-size: 36rpx;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8rpx;
+        }
+
+        .section-desc {
+            display: block;
+            font-size: 26rpx;
+            color: #6b7280;
+        }
+    }
+}
+
+// 步骤1：文件表格
+.file-table-container {
+    background: #fff;
+    border-radius: 16rpx;
+    overflow: hidden;
+    box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+    margin-bottom: 24rpx;
+
+    .file-table {
+        width: 100%;
+
+        .table-header {
+            display: flex;
+            background: #f9fafb;
+            padding: 16rpx 12rpx;
+            border-bottom: 1rpx solid #e5e7eb;
+
+            .th {
+                font-size: 26rpx;
+                font-weight: 600;
+                color: #374151;
+
+                &.name {
+                    flex: 2;
+                }
+
+                &.sheet {
+                    flex: 2;
+                }
+
+                &.meta {
+                    flex: 1.5;
+                    text-align: center;
+                }
+
+                &.action {
+                    flex: 1.5;
+                    text-align: center;
+                }
+            }
+        }
+
+        .table-row {
+            display: flex;
+            align-items: center;
+            padding: 16rpx 12rpx;
+            border-bottom: 1rpx solid #e5e7eb;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .td {
+                font-size: 26rpx;
+                color: #4b5563;
+
+                &.name {
+                    flex: 2;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    padding-right: 8rpx;
+                }
+
+                &.sheet {
+                    flex: 2;
+
+                    .picker-value {
+                        background: #eff6ff;
+                        color: #3b82f6;
+                        padding: 4rpx 8rpx;
+                        border-radius: 6rpx;
+                        font-size: 24rpx;
+                        text-align: center;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+                &.meta {
+                    flex: 1.5;
+                    text-align: center;
+                    font-size: 22rpx;
+                    color: #9ca3af;
+                }
+
+                &.action {
+                    flex: 1.5;
+                    display: flex;
+                    justify-content: center;
+                    gap: 12rpx;
+
+                    .btn {
+                        font-size: 24rpx;
+
+                        &.preview {
+                            color: #3b82f6;
+                        }
+
+                        &.delete {
+                            color: #ef4444;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 预览面板
+.preview-panel {
+    background: #fff;
+    border-radius: 16rpx;
+    padding: 24rpx;
+    margin-bottom: 24rpx;
+    box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+
+    .panel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16rpx;
+
+        .panel-title {
+            font-size: 30rpx;
+            font-weight: 600;
+            color: #1f2937;
+        }
+    }
+
+    .preview-scroll {
+        max-height: 400rpx;
+        border: 1rpx solid #e5e7eb;
+        border-radius: 8rpx;
+
+        .preview-grid {
+            display: inline-block;
+            min-width: 100%;
+
+            .grid-row {
+                display: flex;
+                border-bottom: 1rpx solid #e5e7eb;
+
+                &.header {
+                    background: #f9fafb;
+                    position: sticky;
+                    top: 0;
+                    z-index: 1;
+
+                    .grid-cell {
+                        font-weight: 600;
+                        color: #374151;
+                    }
+                }
+
+                .grid-cell {
+                    padding: 12rpx;
+                    font-size: 24rpx;
+                    color: #4b5563;
+                    border-right: 1rpx solid #e5e7eb;
+                    width: 160rpx;
+                    flex-shrink: 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+
+                    &:last-child {
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 通用卡片样式
+.group-card {
+    background: #fff;
+    border-radius: 16rpx;
+    padding: 24rpx;
+    margin-bottom: 24rpx;
+    box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+// 步骤2 & 3：列表样式
+.groups-list,
+.config-list {
+    height: calc(100vh - 300rpx);
+
+    .group-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24rpx;
+        padding-bottom: 16rpx;
+        border-bottom: 1rpx solid #e5e7eb;
+
+        .group-name-input {
+            flex: 1;
+            font-size: 32rpx;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .delete-btn {
+            font-size: 24rpx;
+            color: #ef4444;
+            padding: 8rpx 16rpx;
+        }
+    }
+
+    .sub-title {
+        font-size: 26rpx;
+        font-weight: 500;
+        color: #374151;
+        margin-bottom: 12rpx;
+        display: block;
+    }
+
+    .file-checkboxes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16rpx;
+        margin-bottom: 24rpx;
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            background: #f9fafb;
+            padding: 8rpx 16rpx;
+            border-radius: 8rpx;
+
+            .file-name {
+                font-size: 24rpx;
+                margin-left: 8rpx;
+                max-width: 200rpx;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .mapping-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16rpx;
+
+        .btns {
+            display: flex;
+            gap: 16rpx;
+        }
+    }
+
+    .mapping-table {
+        border: 1rpx solid #e5e7eb;
+        border-radius: 8rpx;
+        overflow: hidden;
+
+        .table-header {
+            display: flex;
+            background: #f3f4f6;
+            padding: 12rpx;
+
+            text {
+                font-size: 24rpx;
+                font-weight: 600;
+                color: #374151;
+            }
+        }
+
+        .table-row {
+            display: flex;
+            padding: 12rpx;
+            border-top: 1rpx solid #e5e7eb;
+            align-items: center;
+
+            text,
+            view {
+                font-size: 24rpx;
+            }
+        }
+
+        .col-unified {
+            width: 160rpx;
+            flex-shrink: 0;
+            font-weight: 500;
+        }
+
+        .col-file {
+            flex: 1;
+            margin: 0 8rpx;
+            overflow: hidden;
+
+            .picker-text {
+                background: #f9fafb;
+                padding: 6rpx 12rpx;
+                border-radius: 6rpx;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                &.empty {
+                    color: #9ca3af;
+                }
+            }
+        }
+
+        .col-action {
+            width: 60rpx;
+            flex-shrink: 0;
+            text-align: center;
+
+            &.delete {
+                color: #ef4444;
+                font-size: 32rpx;
+            }
+        }
+    }
+
+    .add-group-btn {
+        margin: 24rpx 0;
+        background: #fff;
+        color: #3b82f6;
+        border: 1rpx dashed #3b82f6;
+    }
+}
+
+// 步骤3：配置部分
+.config-section {
+    margin-top: 24rpx;
+
+    .config-title {
+        font-size: 28rpx;
+        font-weight: 500;
+        color: #374151;
+        margin-bottom: 12rpx;
+        display: block;
+    }
+
+    .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16rpx;
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            font-size: 24rpx;
+            background: #f9fafb;
+            padding: 12rpx;
+            border-radius: 8rpx;
+
+            text {
+                margin-left: 8rpx;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+// 弹窗
+.modal-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+    .modal-content {
+        width: 80%;
+        background: #fff;
+        border-radius: 24rpx;
+        padding: 32rpx;
+
+        .modal-title {
+            display: block;
+            font-size: 32rpx;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 32rpx;
+        }
+
+        .modal-input {
+            background: #f3f4f6;
+            padding: 16rpx;
+            border-radius: 8rpx;
+            margin-bottom: 32rpx;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 16rpx;
+        }
+    }
+}
+
+// 预览面板
+.preview-panel {
+    background: #fff;
+    border-radius: 16rpx;
+    padding: 24rpx;
+    margin-bottom: 24rpx;
+    box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+
+    .panel-header {
+        display: flex;
+        flex-direction: column; // 改为垂直排列
+        gap: 16rpx;
+        margin-bottom: 16rpx;
+
+        .panel-title {
+            font-size: 30rpx;
+            font-weight: 600;
+            color: #1f2937;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        .close-btn {
+            align-self: flex-end; // 按钮靠右
+            margin: 0;
+        }
+    }
+
+    .preview-scroll {
+        max-height: 400rpx;
+        border: 1rpx solid #e5e7eb;
+        border-radius: 8rpx;
+    }
+}
+
+// 底部导航
+.step-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24rpx 32rpx;
+    background: #fff;
+    border-top: 1rpx solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 90;
+    padding-bottom: calc(32rpx + env(safe-area-inset-bottom)); // 增加底部安全距离
+
+    .nav-left,
+    .nav-right {
+        width: 200rpx; // 增加宽度防止换行
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-left {
+        justify-content: flex-start;
+    }
+
+    .nav-right {
+        justify-content: flex-end;
+    }
+
+    .step-indicator {
+        font-size: 28rpx;
+        color: #6b7280;
+        font-weight: 500;
+    }
+
+    .nav-btn {
+        margin: 0;
+        font-size: 28rpx;
+        padding: 0 32rpx;
+        line-height: 72rpx; // 增加高度
+        height: 72rpx;
+        border-radius: 36rpx;
+        white-space: nowrap; // 防止文字换行
+
+        &.primary {
+            background: #3b82f6;
+            color: #fff;
+            border: none;
+
+            &[disabled] {
+                background: #9ca3af;
+                opacity: 0.6;
+            }
+        }
+
+        &.secondary {
+            background: #f3f4f6;
+            color: #4b5563;
+            border: none;
+
+            &::after {
+                border: none;
+            }
+
+            // 移除 Taro Button 默认边框
+        }
+    }
+}

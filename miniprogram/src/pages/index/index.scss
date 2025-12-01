@@ -1,0 +1,222 @@
+.index-page {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 50%);
+    padding-bottom: 120rpx;
+}
+
+// 头部
+.header {
+    text-align: center;
+    padding: 80rpx 64rpx 64rpx;
+
+    .logo {
+        font-size: 120rpx;
+        margin-bottom: 24rpx;
+    }
+
+    .title {
+        display: block;
+        font-size: 48rpx;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 16rpx;
+    }
+
+    .subtitle {
+        display: block;
+        font-size: 28rpx;
+        color: #6b7280;
+        margin-bottom: 12rpx;
+    }
+
+    .desc {
+        display: block;
+        font-size: 24rpx;
+        color: #9ca3af;
+    }
+}
+
+// 上传区域
+.upload-section {
+    padding: 0 32rpx;
+    margin-bottom: 48rpx;
+
+    .card {
+        background: #fff;
+        border-radius: 24rpx;
+        padding: 48rpx;
+        box-shadow: 0 8rpx 24rpx rgba(59, 130, 246, 0.08);
+    }
+
+    .card-header {
+        text-align: center;
+        margin-bottom: 48rpx;
+    }
+
+    .card-title {
+        display: block;
+        font-size: 36rpx;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 16rpx;
+    }
+
+    .card-desc {
+        display: block;
+        font-size: 26rpx;
+        color: #6b7280;
+    }
+
+    .upload-btn {
+        width: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        border: none;
+        border-radius: 16rpx;
+        padding: 32rpx;
+        font-size: 32rpx;
+        font-weight: 500;
+        margin-bottom: 32rpx;
+    }
+
+    .tip {
+        text-align: center;
+        font-size: 24rpx;
+        color: #9ca3af;
+    }
+}
+
+// 文件列表
+.files-section {
+    padding: 0 32rpx;
+    margin-bottom: 48rpx;
+
+    .section-header {
+        margin-bottom: 24rpx;
+    }
+
+    .section-title {
+        font-size: 32rpx;
+        font-weight: 600;
+        color: #1f2937;
+    }
+
+    .file-item {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 16rpx;
+        padding: 32rpx;
+        margin-bottom: 16rpx;
+        box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+
+        .file-icon {
+            font-size: 64rpx;
+            margin-right: 24rpx;
+        }
+
+        .file-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .file-name {
+            display: block;
+            font-size: 28rpx;
+            color: #1f2937;
+            margin-bottom: 8rpx;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .file-meta {
+            display: block;
+            font-size: 24rpx;
+            color: #9ca3af;
+        }
+
+        .delete-btn {
+            padding: 12rpx 24rpx;
+            font-size: 24rpx;
+            color: #ef4444;
+            background: #fee2e2;
+            border: none;
+            border-radius: 8rpx;
+        }
+    }
+
+    .compare-btn {
+        width: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        border: none;
+        border-radius: 16rpx;
+        padding: 32rpx;
+        font-size: 32rpx;
+        font-weight: 500;
+        margin-top: 32rpx;
+    }
+}
+
+// 空状态
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120rpx 64rpx;
+
+    .empty-icon {
+        font-size: 120rpx;
+        margin-bottom: 32rpx;
+        opacity: 0.4;
+    }
+
+    .empty-text {
+        font-size: 28rpx;
+        color: #6b7280;
+        margin-bottom: 16rpx;
+    }
+
+    .empty-hint {
+        font-size: 24rpx;
+        color: #9ca3af;
+        text-align: center;
+    }
+}
+
+// 功能介绍
+.features {
+    padding: 0 32rpx;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24rpx;
+
+    .feature-item {
+        background: #fff;
+        border-radius: 16rpx;
+        padding: 32rpx 16rpx;
+        text-align: center;
+    }
+
+    .feature-icon {
+        display: block;
+        font-size: 48rpx;
+        margin-bottom: 16rpx;
+    }
+
+    .feature-title {
+        display: block;
+        font-size: 24rpx;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 8rpx;
+    }
+
+    .feature-desc {
+        display: block;
+        font-size: 20rpx;
+        color: #9ca3af;
+        line-height: 1.5;
+    }
+}

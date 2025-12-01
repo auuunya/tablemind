@@ -1,0 +1,189 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Slate & Indigo Theme */
+  --color-background: hsl(210 40% 98%);
+  --color-foreground: hsl(222 47% 11%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(222 47% 11%);
+
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(222 47% 11%);
+
+  /* Indigo Primary */
+  --color-primary: hsl(221 83% 53%);
+  --color-primary-foreground: hsl(210 40% 98%);
+
+  --color-secondary: hsl(210 40% 96.1%);
+  --color-secondary-foreground: hsl(222 47% 11%);
+
+  --color-muted: hsl(210 40% 96.1%);
+  --color-muted-foreground: hsl(215.4 16.3% 46.9%);
+
+  --color-accent: hsl(210 40% 96.1%);
+  --color-accent-foreground: hsl(222 47% 11%);
+
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(210 40% 98%);
+
+  --color-border: hsl(214.3 31.8% 91.4%);
+  --color-input: hsl(214.3 31.8% 91.4%);
+  --color-ring: hsl(221 83% 53%);
+
+  --color-chart-1: hsl(221 83% 53%);
+  --color-chart-2: hsl(173 58% 39%);
+  --color-chart-3: hsl(197 37% 24%);
+  --color-chart-4: hsl(43 74% 66%);
+  --color-chart-5: hsl(27 87% 67%);
+
+  --color-sidebar: hsl(0 0% 98%);
+  --color-sidebar-foreground: hsl(240 5.3% 26.1%);
+  --color-sidebar-primary: hsl(240 5.9% 10%);
+  --color-sidebar-primary-foreground: hsl(0 0% 98%);
+  --color-sidebar-accent: hsl(240 4.8% 95.9%);
+  --color-sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --color-sidebar-border: hsl(220 13% 91%);
+  --color-sidebar-ring: hsl(217.2 91.2% 59.8%);
+
+  --radius: 0.5rem;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    /* Prevent text size adjustment on orientation change */
+    -webkit-text-size-adjust: 100%;
+    /* Enable smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Mobile-optimized touch targets */
+  @media (max-width: 768px) {
+    /* Ensure buttons are at least 44x44px for touch */
+    button, 
+    a,
+    [role="button"],
+    input[type="button"],
+    input[type="submit"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Prevent zoom on input focus in iOS */
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"],
+    select,
+    textarea {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Custom Scrollbar for data tables - Desktop */
+.data-scrollbar::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+.data-scrollbar::-webkit-scrollbar-track {
+  background: hsl(210 40% 96.1%);
+}
+.data-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(215.4 16.3% 80%);
+  border-radius: 5px;
+}
+.data-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(215.4 16.3% 60%);
+}
+
+/* Mobile-optimized scrollbar - Thinner for touch devices */
+@media (max-width: 768px) {
+  .data-scrollbar::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  .data-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(215.4 16.3% 70%);
+  }
+}
+
+/* Mobile-specific utilities */
+@layer utilities {
+  /* Hide on mobile */
+  .mobile-hidden {
+    @media (max-width: 768px) {
+      display: none !important;
+    }
+  }
+
+  /* Show only on mobile */
+  .mobile-only {
+    display: none !important;
+    @media (max-width: 768px) {
+      display: block !important;
+    }
+  }
+
+  /* Responsive text sizing */
+  @media (max-width: 768px) {
+    .text-responsive-sm {
+      font-size: 0.875rem;
+    }
+    .text-responsive-base {
+      font-size: 1rem;
+    }
+    .text-responsive-lg {
+      font-size: 1.125rem;
+    }
+  }
+
+  /* Touch-friendly spacing */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Mobile-optimized container padding */
+  @media (max-width: 768px) {
+    .container-mobile {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+}
+
+/* Improve tap highlight color on mobile */
+* {
+  -webkit-tap-highlight-color: rgba(99, 102, 241, 0.1);
+}
+
+/* Prevent pull-to-refresh on mobile browsers (optional) */
+body {
+  overscroll-behavior-y: contain;
+}
+
+/* Smoother animations on mobile */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}

@@ -1,0 +1,327 @@
+.result-page {
+    min-height: 100vh;
+    background: #f3f4f6;
+    padding-bottom: 140rpx; // 增加底部 padding 以适配固定底部栏
+}
+
+// 顶部 Tabs
+.tabs-scroll {
+    background: #fff;
+    white-space: nowrap;
+    border-bottom: 1rpx solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    .tabs {
+        display: flex;
+        padding: 0 16rpx;
+
+        .tab-item {
+            display: inline-flex;
+            align-items: center;
+            padding: 24rpx 16rpx;
+            margin-right: 16rpx;
+            font-size: 28rpx;
+            color: #6b7280;
+            position: relative;
+
+            &.active {
+                color: #3b82f6;
+                font-weight: 600;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 4rpx;
+                    background: #3b82f6;
+                }
+            }
+
+            .tab-badge {
+                margin-left: 8rpx;
+                background: #f3f4f6;
+                padding: 2rpx 10rpx;
+                border-radius: 20rpx;
+                font-size: 22rpx;
+            }
+        }
+    }
+}
+
+// 筛选栏
+.filter-bar {
+    background: #fff;
+    padding: 16rpx 24rpx;
+    display: flex;
+    gap: 16rpx;
+    border-bottom: 1rpx solid #e5e7eb;
+    overflow-x: auto;
+
+    .filter-btn {
+        padding: 10rpx 28rpx;
+        border-radius: 32rpx;
+        font-size: 26rpx;
+        background: #f3f4f6;
+        color: #4b5563;
+        border: 1rpx solid transparent;
+        white-space: nowrap;
+        transition: all 0.2s;
+
+        // 默认显示浅色背景，选中加深
+        &.match {
+            background: #ecfdf5;
+            color: #059669;
+            border-color: #a7f3d0;
+        }
+
+        &.mismatch {
+            background: #fffbeb;
+            color: #d97706;
+            border-color: #fde68a;
+        }
+
+        &.missing {
+            background: #fef2f2;
+            color: #dc2626;
+            border-color: #fecaca;
+        }
+
+        &.active {
+            font-weight: 600;
+            color: #fff;
+            border-color: transparent;
+            transform: scale(1.05);
+            box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+
+            // 选中状态样式
+            background: #3b82f6; // 全部
+
+            &.match {
+                background: #10b981;
+            }
+
+            &.mismatch {
+                background: #f59e0b;
+            }
+
+            &.missing {
+                background: #ef4444;
+            }
+        }
+    }
+}
+
+// 底部操作栏 (固定)
+.action-bar.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 24rpx 32rpx;
+    border-top: 1rpx solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 90;
+    padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+
+    .action-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .action-right {
+        display: flex;
+        align-items: center;
+        gap: 24rpx;
+
+        .export-option {
+            display: flex;
+            align-items: center;
+            font-size: 24rpx;
+            color: #4b5563;
+
+            text {
+                margin-left: 4rpx;
+            }
+        }
+    }
+
+    .nav-btn {
+        margin: 0;
+        font-size: 28rpx;
+        padding: 0 32rpx;
+        line-height: 64rpx;
+        height: 64rpx;
+        border-radius: 32rpx;
+
+        &.primary {
+            background: #3b82f6;
+            color: #fff;
+            border: none;
+        }
+
+        &.secondary {
+            background: #f3f4f6;
+            color: #4b5563;
+            border: none;
+        }
+    }
+}
+
+// 表格容器
+.table-container {
+    background: #fff;
+    margin-bottom: 24rpx;
+
+    .table {
+        display: inline-block;
+        min-width: 100%;
+
+        .table-header {
+            display: flex;
+            background: #f9fafb;
+            border-bottom: 1rpx solid #e5e7eb;
+
+            .th {
+                padding: 16rpx 24rpx;
+                font-size: 26rpx;
+                font-weight: 600;
+                color: #374151;
+                white-space: nowrap;
+                border-right: 1rpx solid #e5e7eb;
+                width: 220rpx; // 固定宽度
+                flex-shrink: 0; // 防止压缩
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                &.status {
+                    width: 140rpx;
+                }
+
+                // 状态列宽度
+                &.detail {
+                    width: 400rpx;
+                }
+
+                // 详情列宽度
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+
+        .table-row {
+            display: flex;
+            border-bottom: 1rpx solid #e5e7eb;
+
+            &.match {
+                .status-tag {
+                    background: #ecfdf5;
+                    color: #10b981;
+                }
+            }
+
+            &.mismatch {
+                background: #fffbeb;
+
+                .status-tag {
+                    background: #fff7ed;
+                    color: #f59e0b;
+                }
+            }
+
+            &.missing {
+                background: #fef2f2;
+
+                .status-tag {
+                    background: #fef2f2;
+                    color: #ef4444;
+                }
+            }
+
+            .td {
+                padding: 16rpx 24rpx;
+                font-size: 26rpx;
+                color: #4b5563;
+                white-space: nowrap;
+                border-right: 1rpx solid #e5e7eb;
+                width: 220rpx; // 与表头保持一致
+                flex-shrink: 0; // 防止压缩
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: flex;
+                align-items: center;
+
+                &.status {
+                    justify-content: center;
+                    width: 140rpx; // 状态列可以窄一点
+
+                    .status-tag {
+                        padding: 4rpx 12rpx;
+                        border-radius: 8rpx;
+                        font-size: 22rpx;
+                        font-weight: 500;
+                    }
+                }
+
+                &.has-diff {
+                    color: #d97706;
+                    font-weight: 600;
+                }
+
+                &.detail {
+                    width: 400rpx; // 详情列宽一点
+                    display: block;
+                    white-space: normal;
+
+                    .diff-list {
+                        .diff-item {
+                            display: flex;
+                            justify-content: space-between;
+                            font-size: 22rpx;
+                            margin-bottom: 4rpx;
+                            padding-bottom: 4rpx;
+                            border-bottom: 1rpx dashed #e5e7eb;
+
+                            &:last-child {
+                                border-bottom: none;
+                                margin-bottom: 0;
+                            }
+
+                            .file-name {
+                                color: #6b7280;
+                                margin-right: 16rpx;
+                            }
+
+                            .file-val {
+                                color: #1f2937;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+
+                    .no-diff {
+                        color: #9ca3af;
+                        font-size: 22rpx;
+                    }
+                }
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+}
+
+.load-more {
+    padding: 24rpx;
+    text-align: center;
+}
