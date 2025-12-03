@@ -45,7 +45,8 @@
         "rowsAndCols": "Rows/Cols",
         "actions": "Actions",
         "rows": "rows",
-        "cols": "cols"
+        "cols": "cols",
+        "preview": "Preview"
     },
     "columnMapper": {
         "addGroup": "Add Comparison Group",
@@ -175,12 +176,15 @@
         "useExcelFormat": "Use Excel to open and save as .xlsx format",
         "reduceFileSize": "Reduce file size or split into multiple smaller files",
         "removePassword": "Remove password protection",
-        "tryAnotherFile": "Try uploading another file"
+        "tryAnotherFile": "Try uploading another file",
+        "needHelp": "Need help?",
+        "contactUs": "Contact Support"
     },
     "demo": {
         "groupName": "Demo Group"
     },
     "glossary": {
+        "title": "Glossary",
         "uniqueKey": "Unique Match Key",
         "uniqueKeyDesc": "A field used to uniquely identify each record, like an ID number. Common examples: Order ID, Product ID.",
         "columnMapping": "Column Mapping",

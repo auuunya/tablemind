@@ -18,7 +18,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { HelpPanel } from '@/components/help/HelpPanel';
 import { TourButton } from '@/components/tour/TourGuide';
 import { getDemoInitialState } from '@/lib/demo-data';
-import { Home } from 'lucide-react';
+import { Home, Github } from 'lucide-react';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 const COLORS = ['#6366f1', '#ec4899', '#10b981', '#f59e0b', '#8b5cf6'];
@@ -141,12 +141,12 @@ export function ExcelDiffTool() {
           </div>
         </button>
 
-        <div className="flex flex-wrap gap-2 w-full md:w-auto justify-end">
+        <div className="flex flex-nowrap sm:flex-wrap gap-2 w-full justify-end overflow-x-auto">
           {step === 1 && files.length === 0 && (
             <Button
               variant="outline"
               onClick={startDemoMode}
-              className="gap-2 border-primary/50 text-primary hover:bg-primary/10 flex-1 sm:flex-initial"
+              className="gap-2 border-primary/50 text-primary hover:bg-primary/10 sm:w-auto shrink-0"
               size="sm"
             >
               <BarChart3 className="w-4 h-4" />
@@ -154,10 +154,23 @@ export function ExcelDiffTool() {
               <span className="sm:hidden">{t('buttons.demo')}</span>
             </Button>
           )}
-          <LanguageSwitcher />
+
+          <div className="sm:w-auto shrink-0">
+            <LanguageSwitcher />
+          </div>
+
           <TourButton currentStep={step} />
           <HelpPanel />
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => window.open('https://github.com/auuunya', '_blank')}
+            title="GitHub"
+          >
+            <Github className="w-5 h-5" />
+          </Button>
         </div>
+
 
         {/* Stepper */}
         <div className="flex items-center gap-1 md:gap-2 bg-slate-100 dark:bg-slate-800 p-1 rounded-lg overflow-x-auto">

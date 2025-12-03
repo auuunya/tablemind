@@ -89,8 +89,8 @@ export function HelpPanel() {
 
                 <Tabs defaultValue="help" className="flex-1 flex flex-col">
                     <TabsList className="mx-6 mt-4 grid w-auto grid-cols-2 self-start">
-                        <TabsTrigger value="help">帮助文档</TabsTrigger>
-                        <TabsTrigger value="glossary">术语表</TabsTrigger>
+                        <TabsTrigger value="help">{t('help.title')}</TabsTrigger>
+                        <TabsTrigger value="glossary">{t('glossary.title')}</TabsTrigger>
                     </TabsList>
 
                     <TabsContent value="help" className="flex-1 mt-0">
@@ -187,7 +187,7 @@ export function HelpPanel() {
                     <div className="text-xs text-muted-foreground text-center">
                         <p>{t('errors.needHelp')}</p>
                         <p className="mt-1">
-                            {t('errors.needHelp')} <a href="mailto:zyy.im@outlook.com" className="text-primary hover:underline">zyy.im@outlook.com</a>
+                            {t('errors.contactUs')} <a href="mailto:zyy.im@outlook.com" className="text-primary hover:underline">zyy.im@outlook.com</a>
                         </p>
                     </div>
                 </div>
